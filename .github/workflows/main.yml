@@ -15,7 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Github Actions Result Check
     needs: ci
-    if: always()
     steps:
       - name: Success Step
         if: success()
