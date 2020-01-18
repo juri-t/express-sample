@@ -8,7 +8,7 @@ jobs:
       - name: Build Step
         run: echo "Complete Build"
       - name: Test Step
-        run: echo "Complete Test"
+        run: exit 1
       - name: Deploy Step
         run: echo "Complete Deploy"
   check_result:
