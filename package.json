@@ -4,8 +4,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "DEBUG=* ts-node ./src/index.ts",
+    "dev": "DEBUG=* ts-node-dev ./src/index.ts",
+    "build": "npm-run-all clean tsc",
+    "tsc": "tsc",
+    "clean": "rimraf ./lib"
+  },
   "devDependencies": {
     "@types/express": "^4.17.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.6.2",
+    "ts-node-dev": "^1.0.0-pre.44",
     "typescript": "^3.7.5"
   },
   "dependencies": {
