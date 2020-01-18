@@ -1,15 +1,9 @@
-import { Request, Response } from "express";
+import { createApp } from "./app";
 
-const express = require("express");
-
-const app = express();
+const app = createApp();
 
 // environment
 const PORT = 8000;
-
-app.get("/", (req: Request, res: Response) => {
-  res.status(200).end()
-});
 
 app.listen(PORT, () => {
   console.log(`server is listening... port:${PORT}`)
