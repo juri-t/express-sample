@@ -1,14 +1,25 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  ci:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Build - Test - Deploy
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: juri-t/hello-world-javascript-action@1.0.1
-        with:
-          who-to-greet: 'Mona the Octocat'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Build Step
+        run: echo "Complete Build"
+      - name: Test Step
+        run: echo "Complete Test"
+      - name: Deploy Step
+        run: echo "Complete Deploy"
+  check_result:
+    runs-on: ubuntu-latest
+    name: Github Actions Result Check
+    needs: ci
+    if: always()
+    steps:
+      - name: Success Step
+        if: success()
+        run: echo "Success"
+      - name: Failure Step
+        if: failure()
+        run: echo "Failure"
