@@ -11,14 +11,19 @@ jobs:
         run: exit 1
       - name: Deploy Step
         run: echo "Complete Deploy"
-  check_result:
+  if_success:
     runs-on: ubuntu-latest
     name: Github Actions Result Check
     needs: ci
+    if: success()
     steps:
       - name: Success Step
-        if: success()
         run: echo "Success"
+  if_failure:
+    runs-on: ubuntu-latest
+    name: Github Actions Result Check
+    needs: ci
+    if: failure()
+    steps:
       - name: Failure Step
-        if: failure()
         run: echo "Failure"
