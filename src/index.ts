@@ -6,5 +6,5 @@ const app = createApp();
 const PORT = 8000;
 
 app.listen(PORT, () => {
-  console.log(`server is listening... port:${PORT}`)
+  console.log(`API is running on http://localhost:${PORT}/`);
 });

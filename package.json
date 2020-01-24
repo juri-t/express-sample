@@ -7,10 +7,12 @@
   "scripts": {
     "start": "DEBUG=* ts-node ./src/index.ts",
     "dev": "DEBUG=* ts-node-dev ./src/index.ts",
+    "debug": "node --inspect --require ts-node/register ./src/index.ts",
     "build": "npm-run-all clean tsc",
     "tsc": "tsc",
     "clean": "rimraf ./lib",
-    "test": "jest"
+    "test": "jest",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
     "@types/express": "^4.17.2",
