@@ -10,7 +10,9 @@ export function createApp(): Express {
   const app = express();
 
   app.get("/", (req: Request, res: Response) => {
-    res.status(200).end()
+    res.status(200).json({
+      message: "ok"
+    })
   });
 
   app.get("/user", (req: Request, res: Response) => {
