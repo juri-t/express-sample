@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  express:
+    container_name: express-sample
+    build: .
+    init: true
+    ports:
+      - 8000:8000

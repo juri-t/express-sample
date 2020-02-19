@@ -2,7 +2,7 @@
   "name": "express-sample",
   "private": true,
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "license": "MIT",
   "scripts": {
     "start": "DEBUG=* ts-node ./src/index.ts",
