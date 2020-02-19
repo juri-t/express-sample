@@ -1,8 +1,11 @@
 version: "3.7"
 services:
-  express:
-    container_name: express-sample
+  web:
+    container_name: web-sample
     build: .
     init: true
+  nginx:
+    container_name: nginx-sample
+    build: dockers/nginx
     ports:
-      - 8000:8000
+      - 80:80
